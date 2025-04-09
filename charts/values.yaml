@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: gcr.io/your-project-id/your-image-name
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
+
+resources: {}
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 60
